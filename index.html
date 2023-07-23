@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="shortcut icon" href="x.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
+    <title>fxiq</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        background-color: black;
+        background-image: url('b.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-blend-mode: difference;
+        padding: 0
+      }
+
+      #title {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 100px;
+        color: white;
+        font-weight: 900;
+        text-shadow: 0px 0px 50px #fff;
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="title">fxiq</div>
+    <div id=p></div>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", () => particlesJS('p', {
+        particles: {
+          number: {
+            value: 10,
+            density: {
+              enable: true,
+              value_area: 800
+            }
+          },
+          color: {
+            value: "#ffffff"
+          },
+          shape: {
+            type: "circle",
+            stroke: {
+              width: 0,
+              color: "#ffffff"
+            }
+          },
+          opacity: {
+            value: 0.5,
+            random: false,
+            anim: {
+              enable: false,
+              speed: 1,
+              opacity_min: 0.1,
+              sync: false
+            }
+          },
+          size: {
+            value: 10,
+            random: true,
+            anim: {
+              enable: false,
+              speed: 5,
+              size_min: 0.1,
+              sync: false
+            }
+          },
+          line_linked: {
+            enable: true,
+            distance: 300,
+            color: "#ffffff",
+            opacity: 0.4,
+            width: 2
+          },
+          move: {
+            enable: true,
+            speed: 5,
+            direction: "none",
+            random: false,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: {
+              enable: false,
+              rotateX: 600,
+              rotateY: 1200
+            }
+          }
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: {
+              enable: true,
+              mode: "grab"
+            },
+            onclick: {
+              enable: false,
+              mode: "push"
+            },
+            resize: true
+          },
+          modes: {
+            grab: {
+              distance: 800,
+              line_linked: {
+                opacity: 1
+              }
+            },
+            bubble: {
+              distance: 800,
+              size: 80,
+              duration: 2,
+              opacity: 0.8,
+              speed: 3
+            },
+            repulse: {
+              distance: 400,
+              duration: 0.4
+            },
+            push: {
+              particles_nb: 4
+            },
+            remove: {
+              particles_nb: 2
+            }
+          }
+        },
+        retina_detect: true
+      }));
+
+      const title = document.querySelector('#title');
+      document.onmousemove = e => {
+        const x = e.clientX - 95;
+        const y = e.clientY - 95;
+
+        const rect = title.getBoundingClientRect();
+        const tx = rect.x;
+        const ty = rect.y;
+
+        let ox = tx - x;
+        if (ox > 200) ox = 200;
+        if (ox < -200) ox = -200;
+        let oy = ty - y;
+        if (oy > 100) oy = 100;
+        if (oy < -100) oy = -100;
+
+        title.style['text-shadow'] = `${-ox}px ${-oy}px 50px #fff`;
+      }
+    </script>
+  </body>
+
+</html>
