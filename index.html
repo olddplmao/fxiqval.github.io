@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="shortcut icon" href="x.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap" rel="stylesheet">
     <title>fxiq</title>
     <meta name="description" content="fxiq" />
@@ -25,11 +26,13 @@
         padding: 0
       }
 
-      #title {
+      .x {
         position: fixed;
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
+      }
+      #title {
         font-size: 100px;
         color: white;
         font-weight: 900;
@@ -39,11 +42,28 @@
         -ms-user-select: none;
         user-select: none;
       }
+      .i {
+        text-align: center;
+      }
+      i + i {
+        margin-left: 16px;
+      }
+      i {
+        color: white;
+        font-size: 48px;
+        cursor:pointer;
+      }
     </style>
   </head>
 
   <body>
-    <div id="title">fxiq</div>
+    <div class="x">
+      <div id="title">fxiq</div>
+      <div class="i">
+        <i class="fa-brands fa-github-alt" onclick="location.assign('https://github.com/fxiqval')"></i>
+        <i class="fa-solid fa-book" onclick="location.assign('https://fxiq.eu/about.html')"></i>
+      </div>
+    </div>
     <div id=p></div>
 
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
