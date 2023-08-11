@@ -18,10 +18,10 @@
         margin: 0;
         overflow: hidden;
         background-color: black;
-        background-image: url('b.jpg');
+        /*background-image: url('b.jpg');
         background-repeat: no-repeat;
         background-position: center;
-        background-blend-mode: difference;
+        background-blend-mode: difference;*/
         padding: 0
       }
 
@@ -147,25 +147,6 @@
         },
         retina_detect: true
       }));
-
-      const title = document.querySelector('#title');
-      document.onmousemove = e => {
-        const x = e.clientX - 95;
-        const y = e.clientY - 95;
-
-        const rect = title.getBoundingClientRect();
-        const tx = rect.x;
-        const ty = rect.y;
-
-        let ox = tx - x;
-        if (ox > 200) ox = 200;
-        if (ox < -200) ox = -200;
-        let oy = ty - y;
-        if (oy > 100) oy = 100;
-        if (oy < -100) oy = -100;
-
-        title.style['text-shadow'] = `${-ox}px ${-oy}px 50px #fff`;
-      }
     </script>
   </body>
 
